@@ -7,14 +7,15 @@ The critical phase of this demonstration is while connecting the two peers with 
  
 It is important to note that it is not possible to protect against a Man-In-The-Middle since the beginning, who replaced both Public-Keys with his own Public-Keys.   
  
-## Connecting
-### Establishing Connection between two peers
-1. Connect to server of other peer, if connection failed, instead become the server and let the other peer connect to itself  
+## How it works
+### Connecting
+#### Establishing Connection between two peers
+1. Connect to server of other peer, if connection failed, instead become the server and let the other peer connect to own server  
 2. Exchange RSA-Public Keys & Verify integrity
 3. Peer hosting the Server will create a AES-Key and share it securely, encrypted E2E with RSA
  
-## Metadata & Message
-### Each Packet is seperated into three segments
+### Metadata & Message
+#### Each Packet is seperated into three segments
 1. (16-bytes) AES-Nonce: AES-Decryption requires the nonce from the Encryption. This is provided as header information and is not sensitive data.
 2. (256-bytes) RSA-Signature: Checksum (sha256) of the unencrypted message, result is encrypted with the RSA-Private-Key of the sender. The receiving peer can encrypt this data with the Public-Key of the Peer and verify the checksum against the decrypted third segment, the sensitive message. Protects against Man-in-the-Middle attacks, providing malicious PublicKeys to each peer while connecting.
 3. (Trailing bytes) Encrypted Message: The AES-Encrypted message, can be decrypted with the AES-Nonce and the at the beginning securely exchanged AES-Key. 
