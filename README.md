@@ -1,5 +1,5 @@
 # Encrypted Peer2Peer Chat
-This python project demonstrates a secured implementation for a peer2peer chat. This works locally between two instances of this script, to work online make sure you have forwarded the port 8766 on both ends.
+This python project demonstrates a securely encrypted implementation for a peer2peer chat with an RSA Key Exchange and AES-256 Encrypted Messages. This works locally between two instances of this script, to work online make sure you have forwarded the port 8766 on both ends.
  
 The critical phase of this demonstration is while connecting the two peers with each other and exchanging the keys. The most dangerous attack would be a Man-In-The-Middle replacing the Public-Keys. Protection against this comes in two layers. 
 1. The first one being a client-sided Verification-Checksum of both Public-Keys combined. As this happens automatically, always at the same step, this too could be compromised by a MITM.
