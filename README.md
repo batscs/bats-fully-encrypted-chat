@@ -1,4 +1,7 @@
 # Encrypted Peer2Peer Chat
+
+![example](https://i.gyazo.com/1c16123f3cd307dbc44eec91052d6cc1.png)
+
 This python project demonstrates a securely encrypted implementation for a peer2peer chat with an RSA Key Exchange and AES-256 Encrypted Messages. This works locally between two instances of this script, to work online make sure you have forwarded the port 8766 on both ends.
  
 The critical phase of this demonstration is while connecting the two peers with each other and exchanging the keys. The most dangerous attack would be a Man-In-The-Middle replacing the Public-Keys. Protection against this comes in two layers. 
@@ -7,6 +10,11 @@ The critical phase of this demonstration is while connecting the two peers with 
  
 It is important to note that it is not possible to protect against a Man-In-The-Middle since the beginning, who replaced both Public-Keys with his own Public-Keys.   
  
+## Requirements:
+- python3
+- python3-rsa 
+- pycryptodome
+
 ## How it works
 ### Connecting
 #### Establishing Connection between two peers
