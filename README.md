@@ -1,6 +1,6 @@
 # Encrypted Peer2Peer Chat
 
-![example](https://i.gyazo.com/1c16123f3cd307dbc44eec91052d6cc1.png)
+![example](https://git.bats.li/bats/peer2peer-e2ee-chat/raw/branch/main/doc/chat.png/chat.png)
 
 This python project demonstrates a securely encrypted implementation for a peer2peer chat with an RSA Key Exchange and AES-256 Encrypted Messages. This works locally between two instances of this script, to work online make sure you have forwarded the port 8766 on both ends.
  
