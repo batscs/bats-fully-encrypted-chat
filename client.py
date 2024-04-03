@@ -77,7 +77,7 @@ print(f"Public Key: {hash(str(pubkey))}")
 # try to connect to already existing peer_server, otherwise become server
 try:
     print(f"Trying to connect with {destination}:{port}")
-    server.connect(("127.0.0.1", 8766))
+    server.connect((destination, 8766))
     print(f"Connected to {destination}:{port}")
     other = server
 except ConnectionRefusedError:
